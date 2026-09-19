@@ -1,0 +1,34 @@
+# hello.i432 - Hello World for iAPX 432
+# This program demonstrates basic I/O operations
+
+# Initialize
+PUSH 0x48       # 'H'
+PUSH 0x65       # 'e'
+PUSH 0x6C       # 'l'
+PUSH 0x6C       # 'l'
+PUSH 0x6F       # 'o'
+PUSH 0x20       # ' '
+PUSH 0x57       # 'W'
+PUSH 0x6F       # 'o'
+PUSH 0x72       # 'r'
+PUSH 0x6C       # 'l'
+PUSH 0x64       # 'd'
+PUSH 0x21       # '!'
+PUSH 0x0A       # '\n'
+
+# In a real system, these would be written to output device
+# For this simulator, we just demonstrate stack operations
+
+# Simple loop to demonstrate control flow
+PUSH 0          # Counter = 0
+LOOP:
+    PUSH 1      # Increment
+    ADD         # counter + 1
+    DUP         # Duplicate for comparison
+    PUSH 10     # Limit
+    COMPARE     # Compare counter with limit
+    BRANCHEQ END  # Exit if equal
+    BRANCH LOOP   # Continue loop
+
+END:
+    HALT        # Stop execution
