@@ -1,0 +1,23 @@
+# domain_switch.i432 - Domain Switching Demo
+# Demonstrates protection domain switching
+
+# Create a new domain
+PUSH 0          # Parent domain ID (0 = root)
+CREATE          # Create domain
+
+# Switch to new domain
+DOMAINSWITCH    # Switch to new domain
+
+# Create an object in new domain
+PUSH 0x02       # Type: DATA
+CREATE          # Create object
+
+# Access object
+PUSH 100        # Value
+STORE           # Store in object
+
+# Switch back to original domain
+PUSH 0          # Original domain
+DOMAINSWITCH    # Switch back
+
+HALT            # Stop
