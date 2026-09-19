@@ -1,0 +1,24 @@
+# capability_demo.i432 - Capability Operations Demo
+# Demonstrates object creation and access control
+
+# Create an object
+PUSH 0x01       # Type: INSTRUCTION
+CREATE          # Create object, AD on stack
+
+# Check access rights
+DUP             # Duplicate AD
+CHECKRIGHTS     # Check if we have access
+POP             # Remove result
+
+# Store value to object
+PUSH 42         # Value to store
+STORE           # Store in object
+
+# Load value from object
+LOAD            # Load from object
+# Value 42 should be on stack
+
+# Destroy object
+DESTROY         # Destroy the object
+
+HALT            # Stop
