@@ -1,0 +1,14 @@
+# iAPX 432 Educational Simulator
+# No external dependencies - uses only Python standard library
+#
+# Python >= 3.7 required
+#
+# To install:
+#   pip install -r requirements.txt
+#
+# To run tests:
+#   python -m pytest tests/
+#   or
+#   python tests/test_decoder.py
+#   python tests/test_execution.py
+#   python tests/test_memory.py
